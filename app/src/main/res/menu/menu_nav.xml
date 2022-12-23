@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/listeStadeFragment"
+        android:title="Stades"
+        android:icon="@drawable/list"
+        />
+
+    <item
+        android:id="@+id/playersFragment"
+        android:title="liste"
+        android:icon="@drawable/liste"/>
+
+    <item
+        android:id="@+id/addFragment"
+        android:title="Add"
+        android:icon="@drawable/add"/>
+
+    <item
+        android:id="@+id/profilsFragment"
+        android:title="Profils"
+        android:icon="@drawable/person"/>
+
+
+</menu>
