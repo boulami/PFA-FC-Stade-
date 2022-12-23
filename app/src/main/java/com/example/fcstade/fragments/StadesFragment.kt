@@ -26,7 +26,7 @@ import com.example.fcstade.viewModel.UserViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class StadesFragment : Fragment(R.layout.fragment_liste_stade) {
+class StadesFragment : Fragment(R.layout.fragment_stades) {
     lateinit var stadeAdapter: StadeAdapter
     lateinit var stadeViewModel: StadeViewModel
     private lateinit var binding : FragmentStadesBinding
@@ -37,10 +37,9 @@ class StadesFragment : Fragment(R.layout.fragment_liste_stade) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
-        binding=FragmentStadesBinding.bind(view)
-        initRecyclerView(binding)
+        binding = FragmentStadesBinding.bind(view)
         initViewModel()
-        val navHost=childFragmentManager.findFragmentById(R.id.nav_layout) as NavHostFragment
+        val navHost=childFragmentManager.findFragmentById(R.id.navigation) as NavHostFragment
         navController =navHost.findNavController()
         view.findViewById<BottomNavigationView>(R.id.navigation_bottom).setupWithNavController(
             navController
@@ -57,9 +56,5 @@ class StadesFragment : Fragment(R.layout.fragment_liste_stade) {
                 stadeAdapter.notifyDataSetChanged()
             }
         })
-    }
-
-    private fun initRecyclerView(binding: FragmentStadesBinding) {
-
     }
 }

@@ -18,8 +18,13 @@ class ConnexionFragment : Fragment(R.layout.fragment_connexion) {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_connexion, container, false)
         val connexionBtn: Button = view.findViewById(R.id.connexion)
+        val registerBtn:Button=view.findViewById(R.id.register)
         connexionBtn.setOnClickListener {
             findNavController().navigate(R.id.action_connexionFragment_to_stadesFragment)
+        }
+
+        registerBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_connexionFragment_to_registerFragment)
         }
         return view
     }
