@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
-    android:backgroundTint="@color/recycler"
+    android:backgroundTint="@color/blue"
     android:layout_marginBottom="10dp"
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="0dp">
