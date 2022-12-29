@@ -9,14 +9,14 @@ import retrofit2.Call
 import retrofit2.Response
 
 class UserViewModel : ViewModel(){
-    lateinit var recyclerListData: MutableLiveData<UserList>
+    lateinit var recyclerListData: MutableLiveData<UserList?>
 
 
     init {
         recyclerListData= MutableLiveData()
     }
 
-    fun getUserListObservable():MutableLiveData<UserList>{
+    fun getUserListObservable(): MutableLiveData<UserList?> {
         return recyclerListData
     }
 

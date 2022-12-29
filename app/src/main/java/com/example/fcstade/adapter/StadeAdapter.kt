@@ -3,6 +3,7 @@ package com.example.fcstade.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fcstade.R
@@ -10,33 +11,43 @@ import com.example.fcstade.models.Stade
 import com.example.fcstade.models.StadeList
 
 class StadeAdapter:RecyclerView.Adapter<StadeAdapter.MyViewHolder>() {
+    private var date= arrayOf("17/12/2022","17/08/2023","14/05/2023","14/02/2022")
+    private var location = arrayOf("mabrooka","echarraf","fadl","bab lakhmiss")
+  //  private var price = arrayOf()
+    private val images= intArrayOf(R.drawable.stadium,R.drawable.stadium,R.drawable.stadium,R.drawable.stadium,R.drawable.stadium)
 
-    var stadeList=mutableListOf<Stade>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StadeAdapter.MyViewHolder {
-        val inflater= LayoutInflater.from(parent.context).inflate(R.layout.stade_item,parent,false)
-        return MyViewHolder(inflater)
+        val v=LayoutInflater.from(parent.context).inflate(R.layout.stade_item,parent,false)
+        return MyViewHolder(v)
     }
 
-
     override fun onBindViewHolder(holder: StadeAdapter.MyViewHolder, position: Int) {
-        holder.bind(stadeList[position])
+        holder.itemDate.text=date[position]
+        holder.itemLocation.text=location[position]
+        holder.itemImage.setImageResource(images[position])
+
     }
 
     override fun getItemCount(): Int {
-        return stadeList.size
+        return date.size
     }
 
+    inner class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+        var itemImage:ImageView
+        var itemDate:TextView
+        var itemLocation:TextView
+        var itemJoueur:TextView
+        var itemPrix:TextView
 
-    class MyViewHolder(view: View):RecyclerView.ViewHolder(view){
-        var name: TextView = view.findViewById(R.id.name_stade)
-        var status: TextView = view.findViewById(R.id.stade_status)
-        var adresse: TextView = view.findViewById(R.id.position)
-
-        fun bind (data: Stade){
-            name.text=data.name
-            status.text=data.status
-            adresse.text=data.adresse
+        init {
+            itemImage=itemView.findViewById(R.id.image_stade)
+            itemDate=itemView.findViewById(R.id.date)
+            itemLocation=itemView.findViewById(R.id.location)
+            itemJoueur=itemView.findViewById(R.id.numberOfPlayer)
+            itemPrix=itemView.findViewById(R.id.price)
         }
 
+
     }
+
 }

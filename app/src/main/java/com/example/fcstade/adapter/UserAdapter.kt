@@ -30,8 +30,8 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         var last_name: TextView = view.findViewById(R.id.last_name)
 
         fun bind (data:User){
-            first_name.text=data.first_name
-            last_name.text=data.last_name
+            first_name.text=data.firstName
+            last_name.text=data.lastName
         }
 
     }

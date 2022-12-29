@@ -8,17 +8,17 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface UserApi {
-    @GET("users")
+    @GET("auth/signup")
     fun getUserList():Call<UserList>
-    @GET("users")
+    @GET("auth/signup")
     fun searchUsers(@Query("first_name")searchText:String):Call<UserList>
-    @GET("users/{user_id}")
+    @GET("auth/signup")
     fun getUser(@Path("user_id") user_id:String):Call<UserList>
-    @POST("users")
+    @POST("auth/signup")
     fun createUser(@Body params: User):Call<UserResponse>
-    @DELETE("users/{user_id}")
+    @DELETE("auth/signup")
     fun deleteUser(@Path("user_id")user_id: String):Call<UserResponse>
-    @PATCH("users/{user_id}")
+    @PATCH("auth/signup")
     fun updateUser(@Path("user_id") user_id: String,@Body params: User):Call<UserResponse>
 
 }

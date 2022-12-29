@@ -27,7 +27,7 @@ class PlayersFragment : Fragment(R.layout.fragment_players) {
         super.onViewCreated(view, savedInstanceState)
         binding=FragmentPlayersBinding.bind(view)
         initRecyclerView(binding)
-        initViewModel()
+     //   initViewModel()
     }
 
     private fun initRecyclerView(binding: FragmentPlayersBinding) {
@@ -39,17 +39,5 @@ class PlayersFragment : Fragment(R.layout.fragment_players) {
             adapter=userAdapter
 
         }
-    }
-
-    fun initViewModel(){
-        userViewModel=ViewModelProvider(this).get(UserViewModel::class.java)
-        userViewModel.getUserListObservable().observe(viewLifecycleOwner, Observer<UserList>{
-            if(it==null){
-                Toast.makeText(context,"no result",Toast.LENGTH_LONG)
-            } else{
-                userAdapter.userList=it.data.toMutableList()
-                userAdapter.notifyDataSetChanged()
-            }
-        })
     }
 }
