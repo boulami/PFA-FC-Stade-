@@ -6,21 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
-    android:backgroundTint="@color/blue"
+    android:backgroundTint="@color/recycler"
     android:layout_marginBottom="10dp"
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/image_status"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginLeft="8dp"
-            android:src="@drawable/profil"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,11 +34,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
-            android:textSize="17sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/image_status"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/recycler_full_name" />
+            tools:text="first name" />
 
         <TextView
             android:id="@+id/last_name"
@@ -55,7 +54,7 @@
             tools:text="@string/recycler_nombre_joueur" />
 
         <TextView
-            android:id="@+id/nombre_joueur"
+            android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -65,6 +64,6 @@
             app:layout_constraintLeft_toLeftOf="@+id/first_name"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/first_name"
-            tools:text="nombre joueur" />
+            tools:text="username" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
