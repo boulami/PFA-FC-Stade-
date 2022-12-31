@@ -24,17 +24,26 @@ public class StadiumController {
         return stadiumService.save(stadium);
     }
 
-    @GetMapping("/getAllUsers")
-    public List<Stadium> getAllUser(){
+    @CrossOrigin(origins = "http://localhost:8082")
+    @GetMapping("/getStade/{id}")
+    public Stadium getStadeById(@PathVariable String id){
+        return stadiumService.getStadeById(id);
+    }
+
+    @CrossOrigin(origins = "http://localhost:8082")
+    @GetMapping("/getAllStades")
+    public List<Stadium> getAllStades(){
         return stadiumService.getAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:8082")
     @PutMapping("/update/{id}")
     public String update(@PathVariable String id,
                          @RequestBody Stadium stade){
         return stadiumService.update(id, stade);
     }
 
+    @CrossOrigin(origins = "http://localhost:8082")
     @DeleteMapping("/{id}")
     public String delete(@PathVariable String id) {
 
