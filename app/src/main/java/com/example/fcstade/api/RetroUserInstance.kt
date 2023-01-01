@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetroUserInstance {
     companion object{
-        val baseUrl="http://192.168.56.1:8080/api/"
+        val baseUrl="http://10.0.2.2:8080/api/"
         fun getRetroUserInstance():Retrofit{
             val logging =HttpLoggingInterceptor()
             logging.level=(HttpLoggingInterceptor.Level.BODY)

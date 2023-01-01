@@ -29,11 +29,13 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         var first_name: TextView = view.findViewById(R.id.first_name)
         var last_name: TextView = view.findViewById(R.id.last_name)
         var username:TextView=view.findViewById(R.id.username)
+        var password: TextView=view.findViewById(R.id.pass)
 
         fun bind (data:User){
             first_name.text=data.firstName
             last_name.text=data.lastName
             username.text=data.username
+            password.text=data.password
         }
 
     }

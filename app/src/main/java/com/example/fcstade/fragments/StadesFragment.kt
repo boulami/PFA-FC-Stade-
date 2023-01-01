@@ -3,22 +3,17 @@ package com.example.fcstade.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.fcstade.R
-import com.example.fcstade.adapter.StadeAdapter
 import com.example.fcstade.databinding.FragmentStadesBinding
-import com.example.fcstade.models.StadeList
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class StadesFragment : Fragment(R.layout.fragment_stades) {
-    lateinit var stadeAdapter: StadeAdapter
+    //lateinit var stadeAdapter: StadeAdapter
   //  lateinit var stadeViewModel: StadeViewModel
     private lateinit var binding : FragmentStadesBinding
 
