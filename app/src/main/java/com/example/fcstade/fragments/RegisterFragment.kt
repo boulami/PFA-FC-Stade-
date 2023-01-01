@@ -28,7 +28,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         }
     }
     private fun createUser(){
-        val user=User(id = "1", firstName = "hamza", lastName = "boulami", age = "24", email = "hamza@gmail.Com", password = "123", username = "hamza1")
+        val user=User(firstName = "hamza", lastName = "boulami", age = "24", email = "hamza@gmail.com", password = "hamza123", username = "hamza1")
         createUserViewModel.createUser(user)
     }
 
