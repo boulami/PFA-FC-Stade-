@@ -37,7 +37,7 @@ class CreateUserViewModel:ViewModel() {
 
                 }else{
                     createUserLiveData.postValue(response.body())
-                    Log.d(TAG, "onFaillure: vdlfkfdl")
+                    Log.d(TAG, "onFaillure: error")
                     Log.d(TAG, response.body().toString())
                     Log.d(TAG, response.code().toString())
                 }

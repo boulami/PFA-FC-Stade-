@@ -1,6 +1,7 @@
 package com.example.fcstade.fragments
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
@@ -11,11 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fcstade.R
 import com.example.fcstade.adapter.UserAdapter
 import com.example.fcstade.databinding.FragmentPlayersBinding
+import com.example.fcstade.models.UserList
+import com.example.fcstade.viewModel.UserViewModel
 
 class PlayersFragment : Fragment(R.layout.fragment_players) {
 
- /*   lateinit var userAdapter: UserAdapter
-    lateinit var userViewModel: UserViewModel
+    lateinit var userAdapter: UserAdapter
+    lateinit var userViewModel:UserViewModel
     private lateinit var binding :FragmentPlayersBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -23,6 +26,19 @@ class PlayersFragment : Fragment(R.layout.fragment_players) {
         binding=FragmentPlayersBinding.bind(view)
         initRecyclerView(binding)
         initViewModel()
+        serachUser()
+    }
+    private fun serachUser(){
+        binding.search.setOnClickListener {
+            if (!TextUtils.isEmpty(binding.search.text.toString())){
+                userViewModel.searchUser(binding.search.text.toString())
+            }
+            else{
+                userViewModel.getUserList()
+            }
+
+        }
+
     }
 
     private fun initRecyclerView(binding: FragmentPlayersBinding) {
@@ -44,6 +60,7 @@ class PlayersFragment : Fragment(R.layout.fragment_players) {
                 userAdapter.notifyDataSetChanged()
             }
         })
-    }*/
+        userViewModel.getUserList()
+    }
 }
 

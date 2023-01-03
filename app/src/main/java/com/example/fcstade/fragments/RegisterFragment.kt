@@ -1,6 +1,8 @@
 package com.example.fcstade.fragments
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
@@ -10,12 +12,17 @@ import com.example.fcstade.R
 import com.example.fcstade.databinding.FragmentRegisterBinding
 import com.example.fcstade.models.User
 import com.example.fcstade.models.UserResponse
+import com.example.fcstade.utils.TokenManger
 import com.example.fcstade.viewModel.CreateUserViewModel
+import javax.inject.Inject
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private lateinit var binding : FragmentRegisterBinding
     private lateinit var createUserViewModel: CreateUserViewModel
+
+    @Inject
+    lateinit var tokenManger: TokenManger
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,7 +35,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
         }
     }
     private fun createUser(){
-        val user=User(firstName = "hamza", lastName = "boulami", age = "24", email = "hamza@gmail.com", password = "hamza123", username = "hamza1")
+        val user=User(binding.firstName.toString(),binding.lastName.toString(),binding.email.toString(),binding.username.toString(),binding.age.toString(),binding.pass.toString())
         createUserViewModel.createUser(user)
     }
 
@@ -41,6 +48,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 Toast.makeText(context,"failed to create user",Toast.LENGTH_LONG).show()
             }
             else{
+                tokenManger.saveToken(it.token.toString())
                 Toast.makeText(context,"success",Toast.LENGTH_LONG).show()
             }
         })
