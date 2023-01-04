@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_liste_stade" />
     <fragment
         android:id="@+id/playersFragment"
-        android:name="com.example.fcstade.fragments.PlayersFragment"
+        android:name="com.example.fcstade.fragments.ReservationFragment"
         android:label="fragment_players"
         tools:layout="@layout/fragment_players" />
     <fragment

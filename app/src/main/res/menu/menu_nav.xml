@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/playersFragment"
-        android:title="liste"
+        android:title="reservations"
         android:icon="@drawable/liste"/>
 
     <item
