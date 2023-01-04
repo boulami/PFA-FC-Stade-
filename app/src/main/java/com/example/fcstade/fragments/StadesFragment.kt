@@ -13,8 +13,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class StadesFragment : Fragment(R.layout.fragment_stades) {
-    //lateinit var stadeAdapter: StadeAdapter
-  //  lateinit var stadeViewModel: StadeViewModel
     private lateinit var binding : FragmentStadesBinding
 
     companion object{
@@ -31,16 +29,4 @@ class StadesFragment : Fragment(R.layout.fragment_stades) {
             navController
         )
     }
-
-  /*  private fun initViewModel() {
-        stadeViewModel=ViewModelProvider(this).get(StadeViewModel::class.java)
-        stadeViewModel.getStadeListObservable().observe(viewLifecycleOwner, Observer<StadeList>{
-            if(it==null){
-                Toast.makeText(context,"no result",Toast.LENGTH_LONG)
-            } else{
-        //        stadeAdapter.stadeList=it.data.toMutableList()
-                stadeAdapter.notifyDataSetChanged()
-            }
-        })
-    }*/
 }
