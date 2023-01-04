@@ -25,7 +25,6 @@ class ConnexionFragment : Fragment(R.layout.fragment_connexion) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_connexion, container, false)
         val connexionBtn: Button = view.findViewById(R.id.connexion)
         val registerBtn: Button =view.findViewById(R.id.register)
