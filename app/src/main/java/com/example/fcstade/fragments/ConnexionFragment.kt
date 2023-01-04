@@ -1,8 +1,6 @@
 package com.example.fcstade.fragments
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -11,10 +9,6 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.fcstade.R
 import com.example.fcstade.databinding.FragmentConnexionBinding
-import com.example.fcstade.models.UserResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class ConnexionFragment : Fragment(R.layout.fragment_connexion) {
 

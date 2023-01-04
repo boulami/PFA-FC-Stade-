@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fcstade.api.RetroStadiumInstance
 import com.example.fcstade.api.StadiumService
-import com.example.fcstade.models.res.ListSt
+import com.example.fcstade.models.Stadium.ListSt
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,13 +26,15 @@ class StadiumViewModel :ViewModel(){
                     Log.d(ContentValues.TAG, response.body().toString())
                     Log.d(ContentValues.TAG, response.code().toString())
                 }else{
-
+                    _stadiums.postValue(response.body())
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
                 }
             }
 
             override fun onFailure(call: Call<ListSt>, t: Throwable) {
-            }
 
+            }
         })
     }
 }

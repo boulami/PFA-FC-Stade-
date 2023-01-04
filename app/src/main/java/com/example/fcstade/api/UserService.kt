@@ -1,9 +1,8 @@
 package com.example.fcstade.api
 
-import com.example.fcstade.models.User
-import com.example.fcstade.models.UserList
-import com.example.fcstade.models.UserResponse
-import org.w3c.dom.Text
+import com.example.fcstade.models.users.User
+import com.example.fcstade.models.users.UserList
+import com.example.fcstade.models.users.UserResponse
 import retrofit2.Call
 import retrofit2.http.*
 

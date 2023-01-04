@@ -1,9 +1,8 @@
 package com.example.fcstade.api
 
-import com.example.fcstade.models.*
-import com.example.fcstade.models.res.ListSt
-import com.example.fcstade.models.res.ListStItem
-import com.example.fcstade.models.res.StadiumResponse
+import com.example.fcstade.models.Stadium.ListSt
+import com.example.fcstade.models.Stadium.ListStItem
+import com.example.fcstade.models.Stadium.StadiumResponse
 import retrofit2.Call
 import retrofit2.http.*
 

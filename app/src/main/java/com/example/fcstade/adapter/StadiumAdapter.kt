@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fcstade.R
-import com.example.fcstade.models.res.ListStItem
+import com.example.fcstade.models.Stadium.ListStItem
 
 class StadiumAdapter : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
    private var stadiumList: ArrayList<ListStItem> = ArrayList()
@@ -26,7 +26,7 @@ class StadiumAdapter : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
 
     override fun onBindViewHolder(holder: StadiumAdapter.MyViewHolder, position: Int) {
         stadiumList[position].let {
-            holder.adresse.text = it.address
+            holder.adresse.text = it.address.toString()
             holder.name.text = it.name.toString()
 
         }

@@ -41,11 +41,17 @@
             android:padding="8dp">
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/startDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:text="SAT-May 2:00 PM-3:00PM" />
+                android:text="SAT-May 2:00PM" />
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="SAT-May3:00PM" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

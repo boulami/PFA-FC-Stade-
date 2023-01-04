@@ -1,4 +1,4 @@
-package com.example.fcstade.models
+package com.example.fcstade.models.users
 
 data class User(
     val firstName: String,

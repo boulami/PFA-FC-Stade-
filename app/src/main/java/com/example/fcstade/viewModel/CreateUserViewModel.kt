@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fcstade.api.RetroUserInstance
 import com.example.fcstade.api.UserService
-import com.example.fcstade.models.User
-import com.example.fcstade.models.UserResponse
+import com.example.fcstade.models.users.User
+import com.example.fcstade.models.users.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

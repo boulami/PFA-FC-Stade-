@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fcstade.R
-import com.example.fcstade.models.User
+import com.example.fcstade.models.users.User
 
 
 class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
@@ -31,7 +31,7 @@ class UserAdapter:RecyclerView.Adapter<UserAdapter.MyViewHolder>() {
         var username:TextView=view.findViewById(R.id.username)
         var password: TextView=view.findViewById(R.id.pass)
 
-        fun bind (data:User){
+        fun bind (data: User){
             first_name.text=data.firstName
             last_name.text=data.lastName
             username.text=data.username
