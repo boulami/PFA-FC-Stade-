@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fcstade.R
 import com.example.fcstade.models.Stadium.ListStItem
 
-class StadiumAdapter : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
+class StadiumAdapter(val clickListener: ClickListener) : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
    private var stadiumList: ArrayList<ListStItem> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StadiumAdapter.MyViewHolder {
@@ -26,8 +26,11 @@ class StadiumAdapter : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
 
     override fun onBindViewHolder(holder: StadiumAdapter.MyViewHolder, position: Int) {
         stadiumList[position].let {
-            holder.adresse.text = it.address.toString()
-            holder.name.text = it.name.toString()
+            holder.adresse.text = it.address
+            holder.name.text = it.name
+            holder.itemView.setOnClickListener {
+                clickListener.onItemClick(stadiumList.get(position))
+            }
 
         }
     }
@@ -44,5 +47,8 @@ class StadiumAdapter : RecyclerView.Adapter<StadiumAdapter.MyViewHolder>(){
             adresse.text=data.address
         }
 
+    }
+    interface ClickListener{
+        fun onItemClick(listStItem: ListStItem)
     }
 }

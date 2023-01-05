@@ -16,17 +16,18 @@ import retrofit2.Response
 
 class StadiumViewModel :ViewModel(){
     private val _stadiums = MutableLiveData<ListSt>()
-    lateinit var createStadiumLiveData: MutableLiveData<StadiumResponse?>
+    lateinit var createStadiumLiveData: MutableLiveData<StadiumResponse>
     val stadiums: LiveData<ListSt> = _stadiums
 
     init {
         createStadiumLiveData= MutableLiveData()
     }
 
-    fun getCreateStadiumObserver():MutableLiveData<StadiumResponse?>{
+    fun getCreateStadiumObserver():MutableLiveData<StadiumResponse>{
         return createStadiumLiveData
     }
     fun createNewStadium(stadium:ListStItem){
+        Log.d("TAG", stadium.toString())
         val stadiumService=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)
         val call=stadiumService.createStadium(stadium)
         call.enqueue(object:Callback<StadiumResponse>{

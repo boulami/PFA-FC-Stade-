@@ -6,81 +6,98 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
     app:cardCornerRadius="22dp"
-    android:background="@color/recycler"
-    app:cardElevation="20dp">
+    app:cardElevation="2dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="169dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="12dp"
         android:weightSum="9">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="2"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="16dp"
-            tools:layout_editor_absoluteX="12dp"
-            tools:layout_editor_absoluteY="12dp"
-            tools:ignore="MissingConstraints">
+            app:cardCornerRadius="16dp">
 
             <ImageView
-                android:id="@+id/image_stade"
-                android:layout_width="197dp"
+                android:id="@+id/image"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/stadium" />
         </androidx.cardview.widget.CardView>
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="5"
             android:orientation="vertical"
-            android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cardView2"
-            tools:layout_editor_absoluteY="12dp">
+            android:padding="8dp">
 
-            <ImageView
-                android:layout_width="29dp"
-                android:layout_height="37dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/location"
-                app:layout_constraintEnd_toStartOf="@+id/adresse"
-                tools:layout_editor_absoluteY="58dp" />
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:maxLines="1"
-                android:text="stade sarim"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.116"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="Bernabeu" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/adresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Radius Gallery • Santa Cruz" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/adresse"
-                android:layout_width="550dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="64dp"
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
                 android:maxLines="1"
-                android:text="Radius Gallery • Santa Cruz"
-                android:textSize="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.634" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:text=" MAD"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

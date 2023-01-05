@@ -6,27 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.fcstade.R
 import com.example.fcstade.adapter.StadiumAdapter
 import com.example.fcstade.databinding.FragmentListeStadeBinding
-import com.example.fcstade.databinding.FragmentRegisterBinding
+import com.example.fcstade.models.Stadium.ListStItem
 import com.example.fcstade.viewModel.StadiumViewModel
 
 
-class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade) {
+class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade),StadiumAdapter.ClickListener {
 
     private lateinit var binding : FragmentListeStadeBinding
     lateinit var stadiumAdapter:StadiumAdapter
-    lateinit var viewModel: StadiumViewModel
+    private lateinit var viewModel: StadiumViewModel
+    val stadiumList: ArrayList<ListStItem> = ArrayList()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding= FragmentListeStadeBinding.bind(view)
         initRecycler()
         initViewModel()
+        buildDisplayData()
     }
 
     private fun initRecycler(){
@@ -34,7 +34,7 @@ class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade) {
             layoutManager=LinearLayoutManager(context)
             val decoration =DividerItemDecoration(context,DividerItemDecoration.HORIZONTAL)
             addItemDecoration(decoration)
-            stadiumAdapter=StadiumAdapter()
+            stadiumAdapter=StadiumAdapter(this@ListeStadeFragment)
             adapter=stadiumAdapter
 
         }
@@ -43,9 +43,17 @@ class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade) {
     fun initViewModel(){
         viewModel=ViewModelProvider(this).get(StadiumViewModel::class.java)
         viewModel.getStadiumList()
-       viewModel.stadiums.observe(viewLifecycleOwner, Observer {
+        viewModel.stadiums.observe(viewLifecycleOwner, Observer {
            Log.d("initViewModel", it.toString())
            stadiumAdapter.setData(it)
        })
+    }
+
+    private fun buildDisplayData(){
+
+    }
+
+    override fun onItemClick(listStItem: ListStItem) {
+
     }
 }

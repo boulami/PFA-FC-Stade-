@@ -41,16 +41,17 @@ class ReservationAdapter:RecyclerView.Adapter<ReservationAdapter.MyViewHolder>()
 
 
     class MyViewHolder(view: View):RecyclerView.ViewHolder(view){
-    //    val stadium:TextView=view.findViewById(R.id.name)
-    //    val gestId:TextView=view.findViewById(R.id.adresse)
+      //  val stadium:TextView=view.findViewById(R.id.name)
+      //  val gestId:TextView=view.findViewById(R.id.adresse)
         val startDate:TextView=view.findViewById(R.id.startDate)
         val endDate:TextView=view.findViewById(R.id.endDate)
-    //    val guestName:TextView=view.findViewById(R.id.)
-    //    val guesEmail:TextView=view.findViewById(R.id.)
+        val guestName:TextView=view.findViewById(R.id.name)
 
         fun bind(data: Reservation){
             startDate.text=data.startDate
             endDate.text=data.endDate
+            guestName.text=data.guestName
+
         }
 
 

@@ -25,12 +25,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
 
     private lateinit var binding : FragmentAddBinding
     lateinit var stadeViewModel:StadiumViewModel
-  /*  override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_add, container, false)
-    }*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,7 +35,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         }
     }
     private fun createStadium(){
-        val stadium=ListStItem(binding.name.toString(),binding.adresse.toString())
+        val stadium=ListStItem(binding.name.text.toString(),binding.address.text.toString())
         stadeViewModel.createNewStadium(stadium)
     }
     private fun initViewModel(binding: FragmentAddBinding){
