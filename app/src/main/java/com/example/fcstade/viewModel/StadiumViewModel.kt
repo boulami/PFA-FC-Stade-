@@ -8,13 +8,50 @@ import androidx.lifecycle.ViewModel
 import com.example.fcstade.api.RetroStadiumInstance
 import com.example.fcstade.api.StadiumService
 import com.example.fcstade.models.Stadium.ListSt
+import com.example.fcstade.models.Stadium.ListStItem
+import com.example.fcstade.models.Stadium.StadiumResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class StadiumViewModel :ViewModel(){
     private val _stadiums = MutableLiveData<ListSt>()
+    lateinit var createStadiumLiveData: MutableLiveData<StadiumResponse?>
     val stadiums: LiveData<ListSt> = _stadiums
+
+    init {
+        createStadiumLiveData= MutableLiveData()
+    }
+
+    fun getCreateStadiumObserver():MutableLiveData<StadiumResponse?>{
+        return createStadiumLiveData
+    }
+    fun createNewStadium(stadium:ListStItem){
+        val stadiumService=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)
+        val call=stadiumService.createStadium(stadium)
+        call.enqueue(object:Callback<StadiumResponse>{
+            override fun onResponse(
+                call: Call<StadiumResponse>,
+                response: Response<StadiumResponse>
+            ) {
+                if(response.isSuccessful){
+                    createStadiumLiveData.postValue(response.body())
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+                }
+                else{
+                    createStadiumLiveData.postValue(null)
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<StadiumResponse>, t: Throwable) {
+                createStadiumLiveData.postValue(null)
+            }
+
+        })
+    }
 
     fun getStadiumList(){
         val stadiumInstance=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)

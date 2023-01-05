@@ -10,8 +10,8 @@ interface StadiumService {
     @GET("/stadium/getAllStades")
     fun getStadiumList(): Call<ListSt>
 
-    @Headers("Content-Type: application/json")
-    @POST("/add")
+//    @Headers("Content-Type: application/json")
+    @POST("/stadium/add")
     fun createStadium(@Body params: ListStItem): Call<StadiumResponse>
 
     @Headers("Content-Type: application/json")
