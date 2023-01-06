@@ -1,9 +1,12 @@
 package com.projet.pfa.services;
 
+import com.projet.pfa.collections.Reservation;
 import com.projet.pfa.collections.Stadium;
 import com.projet.pfa.repositories.StadiumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -12,6 +15,10 @@ public class StadiumServiceImpl implements StadiumService {
 
     @Autowired
     private StadiumRepository stadiumRepository;
+
+    public StadiumServiceImpl(StadiumRepository stadiumRepository) {
+        this.stadiumRepository = stadiumRepository;
+    }
 
     @Override
     public String save(Stadium stade) {
@@ -45,8 +52,11 @@ public class StadiumServiceImpl implements StadiumService {
                 .map(std -> new Stadium(
                         std.getId(),
                         std.getName(),
-                        std.getAddress()
+                        std.getAddress(),
+                        std.getReservations()
                 )).collect(Collectors.toList());
         return stades;
     }
+
+
 }

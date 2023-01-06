@@ -1,5 +1,6 @@
 package com.projet.pfa.services;
 
+import com.projet.pfa.collections.Reservation;
 import com.projet.pfa.collections.Stadium;
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface StadiumService {
     void delete(String id);
 
     List<Stadium> getAll();
+
 }

@@ -9,6 +9,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Builder
@@ -22,13 +24,19 @@ public class Reservation {
 
     private String stadiumId;
 
-    private String gestId;
+    private String day;
 
-    private LocalDate startDate;
-
-    private LocalDate endDate;
+    private String time;
 
     private String guestName;
 
     private String guestEmail;
+
+    public Reservation(String stadiumId, String day, String time, String guestName, String guestEmail) {
+        this.stadiumId = stadiumId;
+        this.day = day;
+        this.time = time;
+        this.guestName = guestName;
+        this.guestEmail = guestEmail;
+    }
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @CrossOrigin(origins = "http://localhost:8082")
 @RestController
@@ -16,8 +18,6 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @Autowired
-    private ReservationRepository reservationRepository;
 
     @CrossOrigin(origins = "http://localhost:8082")
     @PostMapping("/add")
@@ -36,6 +36,12 @@ public class ReservationController {
     @GetMapping("/getAllReservations")
     public List<Reservation> getAllReservations(){
         return reservationService.getAll();
+    }
+
+    @CrossOrigin(origins = "http://localhost:8082")
+    @GetMapping("/getReservationTimes/{id}")
+    public List<Map<String, String>> getReservationTimes(@PathVariable String id){
+        return reservationService.getReservationTimes(id);
     }
 
 
