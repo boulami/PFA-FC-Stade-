@@ -20,11 +20,14 @@ class ReservationViewModel  : ViewModel(){
     private val reservations = MutableLiveData<ReservationList>()
     val reservation: LiveData<ReservationList> = reservations
 
-    fun getAllReservation(){
-        val reservationInstance= RetroReservationInstance.getReservationInstance().create(ReservationInterface::class.java)
-        val call=reservationInstance.getAllReservations()
-        call.enqueue(object: Callback<ReservationList> {
-            override fun onResponse(call: Call<ReservationList>, response: Response<ReservationList>) {
+    fun getAllReservations(){
+        val stadiumInstance=RetroStadiumInstance.getRetroStadiumInstance().create(ReservationInterface::class.java)
+        val call=stadiumInstance.getAllReservations()
+        call.enqueue(object:Callback<ReservationList>{
+            override fun onResponse(
+                call: Call<ReservationList>,
+                response: Response<ReservationList>
+            ) {
                 if (response.isSuccessful){
                     reservations.postValue(response.body())
                     Log.d(ContentValues.TAG, response.body().toString())
@@ -37,8 +40,9 @@ class ReservationViewModel  : ViewModel(){
             }
 
             override fun onFailure(call: Call<ReservationList>, t: Throwable) {
-
+                TODO("Not yet implemented")
             }
+
         })
     }
 }

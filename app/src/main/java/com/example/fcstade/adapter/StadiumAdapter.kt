@@ -14,7 +14,6 @@ class StadiumAdapter(val clickListener: ClickListener) : RecyclerView.Adapter<St
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StadiumAdapter.MyViewHolder {
         val inflater=LayoutInflater.from(parent.context).inflate(R.layout.stade_item,parent,false)
-
         return MyViewHolder(inflater)
     }
 

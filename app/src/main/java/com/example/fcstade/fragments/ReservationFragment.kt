@@ -27,6 +27,7 @@ class ReservationFragment : Fragment(R.layout.fragment_players) {
         super.onViewCreated(view, savedInstanceState)
         binding=FragmentPlayersBinding.bind(view)
         initRecyclerView()
+        initViewModel()
     }
 
     private fun initRecyclerView(){
@@ -42,7 +43,7 @@ class ReservationFragment : Fragment(R.layout.fragment_players) {
 
     fun initViewModel(){
         reservationviewModel=ViewModelProvider(this).get(ReservationViewModel::class.java)
-        reservationviewModel.getAllReservation()
+        reservationviewModel.getAllReservations()
         reservationviewModel.reservation.observe(viewLifecycleOwner, Observer {
             Log.d("initViewModel", it.toString())
             reservationAdapter.setData(it)

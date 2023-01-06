@@ -16,7 +16,7 @@ class ReservationAdapter:RecyclerView.Adapter<ReservationAdapter.MyViewHolder>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val inflater=LayoutInflater.from(parent.context).inflate(R.layout.reservation_item,parent,false)
-        return ReservationAdapter.MyViewHolder(inflater)
+        return MyViewHolder(inflater)
     }
 
 
@@ -28,8 +28,9 @@ class ReservationAdapter:RecyclerView.Adapter<ReservationAdapter.MyViewHolder>()
     }
     override fun onBindViewHolder(holder: ReservationAdapter.MyViewHolder, position: Int) {
         reservationList[position].let {
-            holder.startDate.text=it.startDate.toString()
-            holder.endDate.text=it.endDate.toString()
+            holder.guestName.text=it.guestName
+            holder.startDate.text=it.startDate
+            holder.endDate.text=it.endDate
 
         }
     }

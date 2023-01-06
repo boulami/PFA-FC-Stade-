@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetroReservationInstance {
     companion object{
-        val baseUrl="http://10.0.2.2:8080/"
+        val baseUrl="http://10.0.2.2:8080"
         fun getReservationInstance(): Retrofit {
             val logging = HttpLoggingInterceptor()
             logging.level=(HttpLoggingInterceptor.Level.BODY)
