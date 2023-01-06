@@ -132,11 +132,11 @@
         app:layout_constraintGuide_percent="0.65" />
 
     <Button
-        android:id="@+id/connexion"
+        android:id="@+id/connexion_admin"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/roundstyle"
-        android:text="@string/connexion"
+        android:text="@string/connexion_admin"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
@@ -185,11 +185,11 @@
         app:layout_constraintGuide_percent="0.89" />
 
     <Button
-        android:id="@+id/rester_google"
+        android:id="@+id/connexion_user"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/roundstyle"
-        android:text="@string/register_google"
+        android:text="@string/connexion_user"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"

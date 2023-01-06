@@ -39,10 +39,18 @@
         <action
             android:id="@+id/action_connexionFragment_to_stadesFragment"
             app:destination="@id/stadesFragment" />
+        <action
+            android:id="@+id/action_connexionFragment_to_listeReservJoueur"
+            app:destination="@id/listeReservJoueur" />
     </fragment>
     <fragment
         android:id="@+id/stadesFragment"
         android:name="com.example.fcstade.fragments.StadesFragment"
         android:label="fragment_stades"
         tools:layout="@layout/fragment_stades" />
+    <fragment
+        android:id="@+id/listeReservJoueur"
+        android:name="com.example.fcstade.fragments.ListeReservJoueur"
+        android:label="fragment_liste_reserv_joueur"
+        tools:layout="@layout/fragment_liste_reserv_joueur" />
 </navigation>

@@ -31,7 +31,7 @@ class ReservationFragment : Fragment(R.layout.fragment_players) {
     }
 
     private fun initRecyclerView(){
-        binding.listePlayers.apply {
+        binding.listeReservation.apply {
             layoutManager=LinearLayoutManager(context)
             val decoration =DividerItemDecoration(context,DividerItemDecoration.HORIZONTAL)
             addItemDecoration(decoration)

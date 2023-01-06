@@ -20,7 +20,8 @@ class ConnexionFragment : Fragment(R.layout.fragment_connexion) {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_connexion, container, false)
-        val connexionBtn: Button = view.findViewById(R.id.connexion)
+        val connexionBtn: Button = view.findViewById(R.id.connexion_admin)
+        val connexion:Button=view.findViewById(R.id.connexion_user)
         val registerBtn: Button =view.findViewById(R.id.register)
         connexionBtn.setOnClickListener {
             findNavController().navigate(R.id.action_connexionFragment_to_stadesFragment)
@@ -28,6 +29,9 @@ class ConnexionFragment : Fragment(R.layout.fragment_connexion) {
 
         registerBtn.setOnClickListener {
             findNavController().navigate(R.id.action_connexionFragment_to_registerFragment)
+        }
+        connexion.setOnClickListener {
+            findNavController().navigate(R.id.action_connexionFragment_to_listeReservJoueur)
         }
         return view
     }

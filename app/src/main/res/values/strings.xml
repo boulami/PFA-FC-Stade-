@@ -7,11 +7,11 @@
     <string name="username">enter your username</string>
     <string name="password">enter your password</string>
     <string name="confirmer_password">confirm your password</string>
-    <string name="connexion">connexion</string>
+    <string name="connexion_admin">connexion administrateur</string>
+    <string name="connexion_user">connexion utilisateur</string>
     <string name="register">register</string>
-    <string name="register_google">register with google</string>
     <string name="recycler_full_name">name of stadium</string>
-    <string name="heure">Add stadium</string>
+    <string name="reserver">reserver</string>
     <string name="recycler_nombre_joueur">adresse of stadium</string>
     <string name="Add_stadium">Add Stadium</string>
     <string name="name">First Name:</string>

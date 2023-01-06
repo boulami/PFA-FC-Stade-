@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/reservationFragment">
+
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="com.example.fcstade.fragments.ReservationFragment"
+        android:label="fragment_players"
+        tools:layout="@layout/fragment_players" />
+    <fragment
+        android:id="@+id/addReservJoueur"
+        android:name="com.example.fcstade.fragments.AddReservJoueur"
+        android:label="fragment_add_reserv_joueur"
+        tools:layout="@layout/fragment_add_reserv_joueur" />
+    <fragment
+        android:id="@+id/stadessFragment"
+        android:name="com.example.fcstade.fragments.stadessFragment"
+        android:label="fragment_stadess"
+        tools:layout="@layout/fragment_stadess" />
+
+
+</navigation>

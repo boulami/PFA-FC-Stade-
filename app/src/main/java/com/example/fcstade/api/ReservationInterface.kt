@@ -23,5 +23,5 @@ interface ReservationInterface {
 
     @PATCH("/reservation/update/{id}")
  //   @Headers("Content-Type: application/json")
-    fun updateStadium(@Path("name") name: String, @Body params: ListStItem):Call<StadiumResponse>
+    fun updateReservation(@Path("name") name: String, @Body params: ListStItem):Call<StadiumResponse>
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/reservationFragment"
+        android:title="reservations"
+        android:icon="@drawable/list"
+        />
+
+    <item
+        android:id="@+id/addReservJoueur"
+        android:title="Add"
+        android:icon="@drawable/add"/>
+
+    <item
+        android:id="@+id/stadessFragment"
+        android:title="liste stades"
+        android:icon="@drawable/terrain"/>
+
+
+
+</menu>

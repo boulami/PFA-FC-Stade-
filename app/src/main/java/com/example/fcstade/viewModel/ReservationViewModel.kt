@@ -40,7 +40,7 @@ class ReservationViewModel  : ViewModel(){
             }
 
             override fun onFailure(call: Call<ReservationList>, t: Throwable) {
-                TODO("Not yet implemented")
+
             }
 
         })
