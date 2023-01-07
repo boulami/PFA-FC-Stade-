@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import {useNavigate} from "react-router-dom"
 import StadeService from '../../services/StadeService';
-import Stade from './Stade';
+import StadeU from './StadeU';
 import Navbar from "../navbar/navbar";
 
-const StadeList = () =>{
+const StadeListU = () =>{
 
     const navigate = useNavigate();
 
@@ -44,29 +44,23 @@ const StadeList = () =>{
         <div className='flex bg-gray-200 h-screen'>
         
         <div className='container mx-auto my-8'>
-        <div className='h-12'>
-            <button 
-            onClick={() => navigate("/addStade")}
-            className='rounded-2xl bg-white border-black border-2 border-gray-400 px-2 py-1 font-semibold text-lg text-gray-500'>
-                Ajouter Stade
-            </button>
-        </div>
-        <div className='flex shadow border-b'>
-        <table className='min-w-full'>
+        
+        <div className='shadow border-b overflow-x-auto'>
+        <table className='w-full'>
         <thead className='bg-gray-100'>
         <tr>
-            <th className='text-left font-medium text-gray-600 -tracking-wider px-5'>Nom</th>
-            <th className='text-left font-medium text-gray-600 -tracking-wider px-5'>Adresse</th>
-            <th className='text-left font-medium text-gray-600 -tracking-wider px-5'>Actions</th>
+            <th className='text-left font-medium text-gray-600 -tracking-wider px-4 py-2'>Nom</th>
+            <th className='text-left font-medium text-gray-600 -tracking-wider px-4 py-2'>Adresse</th>
+            <th className='text-left font-medium text-gray-600 -tracking-wider px-4 py-2'>Actions</th>
         </tr>
         </thead>
         {!loading && (
                 <tbody className='bg-white '>
                     {stades.map((stade) => (
-                        <Stade 
+                        <StadeU 
                         stade={stade} 
                         deleteStade={deleteStade} 
-                        key={stade.id}></Stade>
+                        key={stade.id}></StadeU>
                     ))}
                 </tbody>
                 )}
@@ -77,4 +71,4 @@ const StadeList = () =>{
     </>
     );
 }
-export default StadeList
+export default StadeListU

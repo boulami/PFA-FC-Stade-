@@ -48,8 +48,14 @@ const Login = () => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          navigate("/stadeList");
-          window.location.reload();
+          const _currentUser = AuthService.getCurrentUser();
+                if(_currentUser.roles[0] === 'ROLE_USER'){
+                  navigate("/stadeListU");
+                  window.location.reload();
+                }else if(_currentUser.roles[0] === 'ROLE_ADMIN'){
+                  navigate("/stadeList");
+                  window.location.reload();
+                }
         },
         (error) => {
           const resMessage =

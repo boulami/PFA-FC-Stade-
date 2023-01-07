@@ -13,8 +13,9 @@ import BoardUser from "./components/BoardUser";
 import StadeList from "./components/StadeComponents/StadeList";
 import AddStade from "./components/StadeComponents/AddStade";
 import UpdateStade from "./components/StadeComponents/UpdateStade";
-
+import StadeListU from "./components/StadeComponentsU/StadeListU";
 import EventBus from "./common/EventBus";
+import ReservStade from "./components/StadeComponentsU/ReservStade";
 
 const App = () => {
   
@@ -30,6 +31,8 @@ const App = () => {
           <Route path='/stadeList' element={<StadeList/>} />
           <Route path='/addStade' element={<AddStade/>}/>
           <Route path='/editStade/:stadeId' element={<UpdateStade/>}/>
+          <Route path='/stadeListU' element={<StadeListU/>} />
+          <Route path='/reservStade/:id' element={<ReservStade/>}/>
         </Routes>
     </div>
   );

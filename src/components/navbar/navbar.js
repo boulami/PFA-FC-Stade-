@@ -30,7 +30,7 @@ export default function Example() {
 
   return(
     <>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar-dark bg-dark ">
         <Link to={"/"} className="navbar-brand">
           FC Stade
         </Link>

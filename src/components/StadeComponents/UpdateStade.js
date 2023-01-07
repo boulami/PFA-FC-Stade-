@@ -11,9 +11,9 @@ const UpdateStade = () => {
   const navigate = useNavigate()
 
   const [stade, setStade] = useState({
-    stadeId: parseInt(stadeId),
+    id: parseInt(stadeId),
     name: "",
-    description: ""
+    address: ""
   });
 
   useEffect(() => {
@@ -22,7 +22,8 @@ const UpdateStade = () => {
       try {
         const response = await StadeService.getStade(stadeId);
         console.log('stadeId: '+stadeId);
-        setStade(response.data);        
+        setStade(response.data);      
+        console.log("stade: "+stade.name)  
       } catch (error) {
         console.log(error.response.data.errors);
       }
