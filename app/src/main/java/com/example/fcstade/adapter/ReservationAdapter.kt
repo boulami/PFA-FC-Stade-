@@ -11,7 +11,7 @@ import com.example.fcstade.models.Stadium.ListStItem
 import com.example.fcstade.models.reservation.Reservation
 import com.example.fcstade.models.reservation.ReservationList
 
-class ReservationAdapter:RecyclerView.Adapter<ReservationAdapter.MyViewHolder>() {
+class ReservationAdapter():RecyclerView.Adapter<ReservationAdapter.MyViewHolder>() {
     private var reservationList: ArrayList<Reservation> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -54,9 +54,6 @@ class ReservationAdapter:RecyclerView.Adapter<ReservationAdapter.MyViewHolder>()
             guestName.text=data.guestName
 
         }
-
-
-
     }
 
 

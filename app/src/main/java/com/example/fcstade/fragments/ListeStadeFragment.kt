@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -15,7 +16,8 @@ import com.example.fcstade.models.Stadium.ListStItem
 import com.example.fcstade.viewModel.StadiumViewModel
 
 
-class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade),StadiumAdapter.ClickListener {
+
+class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade),StadiumAdapter.OnItemClickListener {
 
     private lateinit var binding : FragmentListeStadeBinding
     lateinit var stadiumAdapter:StadiumAdapter
@@ -53,7 +55,7 @@ class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade),StadiumAdapte
 
     }
 
-    override fun onItemClick(listStItem: ListStItem) {
-
+    override fun onItemclick(position: Int) {
+        Toast.makeText(context,"item $position clicked", Toast.LENGTH_SHORT).show()
     }
 }

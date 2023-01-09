@@ -1,10 +1,12 @@
 package com.example.fcstade.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -14,10 +16,12 @@ import com.example.fcstade.adapter.ReservationAdapter
 import com.example.fcstade.adapter.StadiumAdapter
 import com.example.fcstade.adapter.UserAdapter
 import com.example.fcstade.databinding.FragmentPlayersBinding
+import com.example.fcstade.models.reservation.Reservation
+import com.example.fcstade.models.reservation.ReservationList
 import com.example.fcstade.viewModel.ReservationViewModel
 import com.example.fcstade.viewModel.StadiumViewModel
 
-class ReservationFragment : Fragment(R.layout.fragment_players) {
+class ReservationFragment : Fragment(R.layout.fragment_players){
 
     private lateinit var binding :FragmentPlayersBinding
     lateinit var reservationAdapter: ReservationAdapter
@@ -49,5 +53,7 @@ class ReservationFragment : Fragment(R.layout.fragment_players) {
             reservationAdapter.setData(it)
         })
     }
+
+
 }
 

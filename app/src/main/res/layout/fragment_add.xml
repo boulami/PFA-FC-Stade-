@@ -110,7 +110,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/roundstyle"
-        android:text="@string/heure"
+        android:text="@string/Add_stadium"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline57"
         app:layout_constraintEnd_toStartOf="@+id/guideline51"
