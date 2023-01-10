@@ -59,6 +59,4 @@ class   StadiumAdapter(private val listener: OnItemClickListener) : RecyclerView
         fun onItemclick(position: Int )
     }
 
-
-
 }

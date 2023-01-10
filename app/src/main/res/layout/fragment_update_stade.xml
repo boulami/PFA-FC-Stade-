@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.UpdateStadeFragment">
+
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline98"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       app:layout_constraintGuide_percent="0.15" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline99"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       app:layout_constraintGuide_percent="0.85" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline100"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.15" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline101"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.22" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline102"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.25" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline103"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.32" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline104"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.35" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline105"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.42" />
+
+   <EditText
+       android:id="@+id/name2"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/custom_input"
+       android:drawablePadding="12dp"
+       android:hint="@string/recycler_full_name"
+       android:paddingStart="12dp"
+       app:layout_constraintBottom_toTopOf="@+id/guideline101"
+       app:layout_constraintEnd_toStartOf="@+id/guideline99"
+       app:layout_constraintStart_toStartOf="@+id/guideline98"
+       app:layout_constraintTop_toTopOf="@+id/guideline100" />
+
+   <EditText
+       android:id="@+id/adresse2"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/custom_input"
+       android:drawablePadding="12dp"
+       android:hint="@string/recycler_nombre_joueur"
+       android:paddingStart="12dp"
+       app:layout_constraintBottom_toTopOf="@+id/guideline103"
+       app:layout_constraintEnd_toStartOf="@+id/guideline99"
+       app:layout_constraintStart_toStartOf="@+id/guideline98"
+       app:layout_constraintTop_toTopOf="@+id/guideline102" />
+
+   <Button
+       android:id="@+id/update"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/roundstyle"
+       android:text="update"
+       android:textColor="@color/white"
+       app:layout_constraintBottom_toTopOf="@+id/guideline105"
+       app:layout_constraintEnd_toStartOf="@+id/guideline99"
+       app:layout_constraintStart_toStartOf="@+id/guideline98"
+       app:layout_constraintTop_toTopOf="@+id/guideline104" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

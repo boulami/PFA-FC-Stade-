@@ -19,7 +19,16 @@
         android:id="@+id/stadessFragment"
         android:name="com.example.fcstade.fragments.stadessFragment"
         android:label="fragment_stadess"
-        tools:layout="@layout/fragment_stadess" />
+        tools:layout="@layout/fragment_stadess" >
+        <action
+            android:id="@+id/action_stadessFragment_to_updateStadeFragment"
+            app:destination="@id/updateStadeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStadeFragment"
+        android:name="com.example.fcstade.fragments.UpdateStadeFragment"
+        android:label="fragment_update_stade"
+        tools:layout="@layout/fragment_update_stade" />
 
 
 </navigation>

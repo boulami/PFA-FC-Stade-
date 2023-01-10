@@ -17,15 +17,23 @@ import retrofit2.Response
 class StadiumViewModel :ViewModel(){
     private val _stadiums = MutableLiveData<ListSt>()
     lateinit var createStadiumLiveData: MutableLiveData<StadiumResponse>
+    lateinit var loadStadiumData: MutableLiveData<StadiumResponse>
     val stadiums: LiveData<ListSt> = _stadiums
 
     init {
         createStadiumLiveData= MutableLiveData()
+        loadStadiumData= MutableLiveData()
     }
 
     fun getCreateStadiumObserver():MutableLiveData<StadiumResponse>{
         return createStadiumLiveData
     }
+
+    fun getLoadStadiumObserver():MutableLiveData<StadiumResponse>{
+        return loadStadiumData
+    }
+
+
     fun createNewStadium(stadium:ListStItem){
         Log.d("TAG", stadium.toString())
         val stadiumService=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)
@@ -74,5 +82,66 @@ class StadiumViewModel :ViewModel(){
 
             }
         })
+    }
+
+    fun loadStadiumData(id:String){
+        val stadiumInstance=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)
+        val call=stadiumInstance.getStadeById(id)
+
+        call.enqueue(object:Callback<StadiumResponse>{
+            override fun onResponse(
+                call: Call<StadiumResponse>,
+                response: Response<StadiumResponse>
+            ) {
+                if(response.isSuccessful){
+                    loadStadiumData.postValue(response.body())
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+                }
+                else{
+                    loadStadiumData.postValue(null)
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+                }
+            }
+
+            override fun onFailure(call: Call<StadiumResponse>, t: Throwable) {
+                loadStadiumData.postValue(null)
+            }
+
+        })
+
+    }
+
+    fun updateStadium(id:String,stadium:ListStItem){
+        Log.d("TAG", stadium.toString())
+        val stadiumInstance=RetroStadiumInstance.getRetroStadiumInstance().create(StadiumService::class.java)
+        val call=stadiumInstance.updateStadium(id,stadium)
+
+        call.enqueue(object : Callback<StadiumResponse>{
+            override fun onResponse(
+                call: Call<StadiumResponse>,
+                response: Response<StadiumResponse>
+            ) {
+                if (response.isSuccessful){
+                    createStadiumLiveData.postValue(response.body())
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+                }
+                else{
+                    createStadiumLiveData.postValue(null)
+                    Log.d(ContentValues.TAG, response.body().toString())
+                    Log.d(ContentValues.TAG, response.code().toString())
+
+                }
+
+            }
+
+            override fun onFailure(call: Call<StadiumResponse>, t: Throwable) {
+                createStadiumLiveData.postValue(null)
+            }
+
+        })
+
     }
 }
