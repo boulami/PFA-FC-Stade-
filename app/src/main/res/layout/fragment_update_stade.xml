@@ -101,5 +101,32 @@
        app:layout_constraintStart_toStartOf="@+id/guideline98"
        app:layout_constraintTop_toTopOf="@+id/guideline104" />
 
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline106"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.05" />
+
+   <androidx.constraintlayout.widget.Guideline
+       android:id="@+id/guideline107"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintGuide_percent="0.12" />
+
+   <EditText
+       android:id="@+id/identifiant"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/custom_input"
+       android:drawablePadding="12dp"
+       android:paddingStart="12dp"
+       android:hint="identifiant of stadium"
+       app:layout_constraintBottom_toTopOf="@+id/guideline107"
+       app:layout_constraintEnd_toStartOf="@+id/guideline99"
+       app:layout_constraintStart_toStartOf="@+id/guideline98"
+       app:layout_constraintTop_toTopOf="@+id/guideline106" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

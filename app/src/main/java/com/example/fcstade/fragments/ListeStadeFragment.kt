@@ -55,7 +55,7 @@ class ListeStadeFragment : Fragment(R.layout.fragment_liste_stade),StadiumAdapte
 
     }
 
-    override fun onItemclick(position: Int) {
+    override fun onItemclick(position: String) {
         Toast.makeText(context,"item $position clicked", Toast.LENGTH_SHORT).show()
     }
 }

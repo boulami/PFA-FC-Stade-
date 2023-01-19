@@ -35,7 +35,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         }
     }
     private fun createStadium(){
-        val stadium=ListStItem(binding.name.text.toString(),binding.address.text.toString())
+        val stadium=ListStItem("",binding.name.text.toString(),binding.address.text.toString())
         stadeViewModel.createNewStadium(stadium)
     }
     private fun initViewModel(binding: FragmentAddBinding){

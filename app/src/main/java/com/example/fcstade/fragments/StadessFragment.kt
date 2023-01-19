@@ -1,21 +1,19 @@
 package com.example.fcstade.fragments
 
-import android.app.Activity
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fcstade.R
+import com.example.fcstade.Utils.IDPOSITION
 import com.example.fcstade.adapter.StadiumAdapter
 import com.example.fcstade.databinding.FragmentStadessBinding
-import com.example.fcstade.models.Stadium.ListStItem
 import com.example.fcstade.viewModel.StadiumViewModel
 
 class stadessFragment : Fragment(R.layout.fragment_stadess),StadiumAdapter.OnItemClickListener  {
@@ -50,9 +48,10 @@ class stadessFragment : Fragment(R.layout.fragment_stadess),StadiumAdapter.OnIte
         })
     }
 
-    override fun onItemclick(position: Int) {
+    override fun onItemclick(position: String) {
+        Log.d(TAG, "onItemclick: $position")
+        IDPOSITION = position
         findNavController().navigate(R.id.updateStadeFragment)
-       // val clickedItem=
     }
 
 }

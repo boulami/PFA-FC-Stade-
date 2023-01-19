@@ -1,6 +1,8 @@
 package com.example.fcstade.adapter
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,11 +22,13 @@ class   StadiumAdapter(private val listener: OnItemClickListener) : RecyclerView
     @SuppressLint("NotifyDataSetChanged")
     fun setData(data: List<ListStItem>) {
         stadiumList = data as ArrayList<ListStItem>
+
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: StadiumAdapter.MyViewHolder, position: Int) {
         stadiumList[position].let {
+            holder.id.text=it.id
             holder.adresse.text = it.address
             holder.name.text = it.name
         }
@@ -36,9 +40,11 @@ class   StadiumAdapter(private val listener: OnItemClickListener) : RecyclerView
     }
 
     inner class MyViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener{
+        val id:TextView=itemView.findViewById(R.id.id)
         val name:TextView=itemView.findViewById(R.id.name)
         val adresse:TextView=itemView.findViewById(R.id.adresse)
         fun bind(data: ListStItem){
+            id.text=data.id
             name.text=data.name
             adresse.text=data.address
         }
@@ -49,14 +55,15 @@ class   StadiumAdapter(private val listener: OnItemClickListener) : RecyclerView
         override fun onClick(p: View?) {
             val position=adapterPosition
             if (position!=RecyclerView.NO_POSITION){
-                listener.onItemclick(position)
+                listener.onItemclick(stadiumList.get(position).id)
+                Log.d(TAG, "chi tkharbi9a: $id")
             }
         }
 
     }
 
     interface OnItemClickListener{
-        fun onItemclick(position: Int )
+        fun onItemclick(position: String)
     }
 
 }

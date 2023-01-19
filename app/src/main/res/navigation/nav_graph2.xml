@@ -28,7 +28,11 @@
         android:id="@+id/updateStadeFragment"
         android:name="com.example.fcstade.fragments.UpdateStadeFragment"
         android:label="fragment_update_stade"
-        tools:layout="@layout/fragment_update_stade" />
+        tools:layout="@layout/fragment_update_stade" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 
 
 </navigation>
